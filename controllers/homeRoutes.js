@@ -95,6 +95,35 @@ router.get('/newpost', async (req, res) => {
   }
 });
 
+router.get('/editpost/:id', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      new: true,
+      nest: true
+    });
+
+    if(!postData) {
+      res.status(404).json({ message: 'No post found with this id'})
+    }
+
+    if(postData.user_id !== req.session.user_id) {
+      res.status(404).json({message: "No post found with this id"})
+    }
+
+    console.log(postData)
+
+    res.render('edit-post', {
+      post: postData.dataValues,
+      logged_in: req.session.logged_in,
+      user_id: req.session.user_id
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+
 // // Use withAuth middleware to prevent access to route
 // router.get('/profile', withAuth, async (req, res) => {
 //   try {

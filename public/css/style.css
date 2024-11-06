@@ -1,13 +1,32 @@
+body {
+  background-color: #dcebd5;
+}
+
+
 ul {
   list-style: none;
   padding: 0;
 }
 
+header {
+  background-color: #231010;
+  padding: 20px 0;
+}
+
 header nav ul {
   gap: 20px;
 }
-header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
+
+header nav ul li a {
+  color: #cad5c4;
+}
+
+h1 a {
+  background-color: #cad5c4;
+  padding: 3px;
+  color: #231010;
+  box-shadow: 1px 1px 1px #cad5c4;
+  border-radius: 10px;
 }
 
 .no-button {
@@ -31,3 +50,27 @@ header, .project:not(:last-child) {
   margin-left: -5px;
 }
 
+.post {
+  border: 2px solid #231010;
+}
+
+.post h3 {
+  background-color: #231010;
+  color: #cad5c4;
+  padding: 3px 7px;
+}
+
+.post * {
+  color: #231010;
+  text-decoration: none;
+}
+
+.post  p {
+  padding: 3px 7px;
+
+}
+
+.comment {
+  border-bottom: 1px solid #231010;
+  margin-bottom: 10px;
+}

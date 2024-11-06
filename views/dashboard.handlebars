@@ -2,7 +2,7 @@
 
 {{#each posts as |post|}}
     <div class="post">
-        <a href="/post/{{post.id}}">
+        <a href="/editpost/{{post.id}}">
         <h3>{{post.title}}</h3>
         <p>Posted by {{post.user.username}} on {{format_date post.date_created}}</p>
         <p>{{post.description}}</p>
@@ -12,3 +12,4 @@
 
 
 <a href="/newpost">+ New post</a>
+
